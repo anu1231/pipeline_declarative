@@ -21,12 +21,12 @@ pipeline {
 
 			}
 		stage("test") {
-   				steps {
-					when {
-						expression {
+   				when {
+					expression {
 							params.REQUESTED_ACTION=='greeting'
 						}
 					}
+			        steps {
 					echo "testing stage"
      					 }
 				}
