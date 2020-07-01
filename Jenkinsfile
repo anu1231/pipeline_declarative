@@ -5,7 +5,7 @@ pipeline {
 		NEW_VERSION='1.3.0'
 	}
 	parameters {
-		string(name:first,defaultvalue:'',description:'')
+		string(Name:first,defaultValue:'',description:'')
 	}
 
 	stages {
