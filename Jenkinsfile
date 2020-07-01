@@ -6,6 +6,7 @@ pipeline {
 	}
 	parameters {
 		string(name:first,defaultvalue:'',description:'')
+	}
 
 	stages {
       		stage("build") {
