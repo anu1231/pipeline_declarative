@@ -5,9 +5,12 @@ pipeline {
 		NEW_VERSION='1.3.0'
 	}
 	parameters {
-		string(name:'first',defaultValue:'',description:'')
+		
+            choice(
+            choices: ['greeting' , 'silence'],
+            description: '',
+            name: 'REQUESTED_ACTION')
 	}
-
 	stages {
       		stage("build") {
 			steps {
@@ -20,8 +23,8 @@ pipeline {
 		stage("test") {
    				steps {
 					when {
-						expression{
-							params.first
+						expression {
+							params.REQUESTED_ACTION=='greeting'
 						}
 					}
 					echo "testing stage"
